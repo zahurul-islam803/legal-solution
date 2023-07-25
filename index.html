@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Poppins&display=swap"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <!-- Font awesome cdn -->
@@ -31,26 +31,36 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-     <script>
+    <!-- customize tailwind css -->
+    <script>
       tailwind.config = {
         theme: {
           extend: {
+            // Added banner image
             backgroundImage: {
               "hero-bg": "url('./images/banner.png')",
+            },
+            // Added title & desc color
+            colors: {
+              title: "#414040",
+              desc: "#707070",
+              "btn-bg": "#B68C5A",
+              white: '#fff',
+            },
+            // Font Family
+            fontFamily: {
+              garamond: ["'EB Garamond', serif"],
+              poppins: ["'Poppins', sans-serif"],
+            },
+            // Font weight
+            fontWeight: {
+              semibold: '600',
+              extrabold: "800",
             },
           },
         },
       };
     </script>
-    <!-- Custom CSS -->
-    <style>
-      .font-EB {
-        font-family: "EB Garamond", serif;
-      }
-      .font-poppins {
-        font-family: "Poppins", sans-serif;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -61,7 +71,7 @@
             <img src="./images/logo2.png" alt="" />
           </div>
           <div
-            class="flex flex-col lg:flex-row lg:gap-8 gap-4 my-3 list-none font-poppins text-[#707070]"
+            class="flex flex-col lg:flex-row lg:gap-8 gap-4 my-3 list-none font-poppins text-desc"
           >
             <li>Home</li>
             <li>Services <i class="fa-solid fa-greater-than"></i></li>
@@ -71,7 +81,7 @@
           </div>
           <div>
             <button
-              class="btn bg-[#B68C5A] text-white text-lg font-poppins font-semibold capitalize"
+              class="btn bg-btn-bg text-white text-lg font-poppins font-semibold capitalize"
             >
               Free Consultation
             </button>
@@ -80,18 +90,36 @@
       </nav>
       <!-- Navbar Ends here -->
       <!-- Banner section starts here -->
-      <section class="max-w-screen-xl mx-auto px-8 md:px-12 lg:px-24 py-5 my-10">
-        <div class="hero border-none rounded-lg bg-gradient-to-r from-[#111] to-[#11111100] bg-hero-bg">
+      <section
+        class="max-w-screen-xl mx-auto px-8 md:px-12 lg:px-24 py-5 my-10"
+      >
+        <div
+          class="hero border-none rounded-lg bg-gradient-to-r from-[#111] to-[#11111100] bg-hero-bg"
+        >
           <div class="hero-overlay bg-opacity-60"></div>
           <div class="hero-content py-28 text-center text-neutral-content">
             <div class="max-w-md">
-              <h1 class="mb-6 text-2xl md:text-5xl lg:text-7xl font-EB font-extrabold text-white">We Provide Effective Legal Solutions</h1>
+              <h1
+                class="mb-6 text-2xl md:text-5xl lg:text-7xl font-garamond font-extrabold text-white"
+              >
+                We Provide Effective Legal Solutions
+              </h1>
               <p class="mb-8 text-[#E7E7E7]">
-                There are many variations of passages of Lorem Ipsum available, but the majority <br> have suffered alteration in some form, by injected humour.
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority <br />
+                have suffered alteration in some form, by injected humour.
               </p>
               <div class="flex items-center gap-6">
-                <input type="text" class="font-poppins text-[#A0A0A0] w-52 md:w-80 lg:w-[400px] h-12 rounded-lg border-none px-5 pl-5" placeholder="Search your services">
-                <button class="btn text-xl font-poppins font-semibold text-white bg-[#B68C5A] border-none capitalize">Search</button>
+                <input
+                  type="text"
+                  class="font-poppins text-desc w-52 md:w-80 lg:w-[400px] h-12 rounded-lg border-none px-5 pl-5"
+                  placeholder="Search your services"
+                />
+                <button
+                  class="btn text-xl font-poppins font-semibold text-white bg-btn-bg border-none capitalize"
+                >
+                  Search
+                </button>
               </div>
             </div>
           </div>
@@ -99,6 +127,23 @@
       </section>
       <!-- Banner section ends here -->
     </header>
-    <main></main>
+    <main>
+      <!-- Legal Practice Area starts here -->
+      <section
+        class="max-w-screen-xl mx-auto px-8 md:px-12 lg:px-24 py-5 my-10"
+      >
+        <div class="text-center">
+          <h1 class="font-extrabold font-garamond text-4xl text-title">
+            The Legal Practice Area
+          </h1>
+          <p class="mt-6 mb-16 font-poppins text-desc">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have <br />
+            suffered alteration in some form, by injected humour.
+          </p>
+        </div>
+      </section>
+      <!-- Legal Practice Area ends here -->
+    </main>
   </body>
 </html>
